@@ -13,14 +13,18 @@ class ConditionsTile extends React.Component {
     render() {
         return (
             <div>
+                <h3>Conditions</h3>
                 { this.state.conditions.map((condition) => (
-                    <input 
-                        key={condition.name} 
-                        type="checkbox" 
-                        onChange={ () => this._handleConditionMarking(condition)} 
-                        defaultChecked={condition.marked} 
-                        value={condition.name} 
-                    />
+                    <label>
+                        <input 
+                            key={condition.name} 
+                            type="checkbox" 
+                            onChange={ () => this._handleConditionMarking(condition)} 
+                            defaultChecked={condition.marked} 
+                            value={condition.name} 
+                        />
+                        {condition.name}
+                    </label>
                 ))}
             </div>
         );
