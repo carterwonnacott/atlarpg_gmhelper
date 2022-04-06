@@ -22,17 +22,29 @@ class FatigueTile extends React.Component {
         });
     }
 
+    _clearFatigue() {
+        this.setState({
+            ...this.state,
+            curr_fatigue: 0
+        });
+    }
+
     render() {
         return (
             <div>
-                <h3>Fatigue</h3>
+                <div>
+                    <h3>Fatigue</h3>
+                    <button
+                        onClick={() => this._decrementFatigue()}
+                    >-</button>
+                    {this.state.curr_fatigue} / {this.state.max_fatigue}
+                    <button
+                        onClick={() => this._incrementFatigue()}
+                    >+</button>
+                </div>
                 <button
-                    onClick={() => this._decrementFatigue()}
-                >-</button>
-                {this.state.curr_fatigue} / {this.state.max_fatigue}
-                <button
-                    onClick={() => this._incrementFatigue()}
-                >+</button>
+                    onClick={() => this._clearFatigue()}
+                >Clear</button>
             </div>
         );
     }

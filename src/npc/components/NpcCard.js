@@ -27,6 +27,12 @@ class NpcCard extends React.Component {
                 marked: false
             },
         ];
+        var balance = {
+            principle: 'Peace',
+            center: 0,
+            curr_balance: 1,
+            max_balance: 3
+        }
         var test_npc = {
             name: 'Keiko Hiratsuka',
             tier: 'Master',
@@ -34,7 +40,7 @@ class NpcCard extends React.Component {
             curr_fatigue: 3,
             max_fatigue: 10,
             techniques: null,
-            balance: null,
+            balance: balance,
             notes: null
         };
         this.state = {...this.state, test_npc};
