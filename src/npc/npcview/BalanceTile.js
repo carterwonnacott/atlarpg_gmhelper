@@ -16,7 +16,7 @@ class BalanceTile extends React.Component {
     _generateBalanceString() {
         var balanceString = '';
         var balance = this.state.balance;
-        if (balance.center <= balance.max_balance) {
+        if (balance.center <= balance.max_balance && balance.center >= 0) {
             while (balanceString.length < balance.curr_balance * 2) {
                 balanceString += ' ';
             }
@@ -33,13 +33,16 @@ class BalanceTile extends React.Component {
 
     _shiftBalanceDown() {
         let balance = this.state.balance;
-        balance.curr_balance = balance.curr_balance === 0 ? 0 : balance.curr_balance - 1
+        if (balance.curr_balance === 0) {
+            balance.center = balance.center === -1 ? -1 : balance.center - 1;
+            balance.curr_balance = balance.center;
+        }
+        else balance.curr_balance = balance.curr_balance - 1
         this.setState({
             ...this.state,
             balance: balance,
-            baanceString: this._generateBalanceString()
+            balanceString: this._generateBalanceString()
         });
-        this.render();
     }
 
     _shiftBalanceUp() {

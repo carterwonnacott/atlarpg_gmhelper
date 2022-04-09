@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import NpcCard from './npc/components/NpcCard';
+import NpcView from './npc/npcview/NpcView';
 
 ReactDOM.render(
-  <NpcCard />,
+  <NpcView />,
   document.getElementById('root')
 );

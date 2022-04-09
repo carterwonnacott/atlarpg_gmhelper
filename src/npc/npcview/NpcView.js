@@ -3,7 +3,7 @@ import ConditionsTile from './ConditionsTile';
 import FatigueTile from './FatigueTile';
 import BalanceTile from './BalanceTile';
 
-class NpcCard extends React.Component {
+class NpcView extends React.Component {
     constructor() {
         super();
         var conditions = [
@@ -67,4 +67,4 @@ class NpcCard extends React.Component {
     }
 }
 
-export default NpcCard;
+export default NpcView;
