@@ -1,6 +1,7 @@
 import React from 'react';
 import ConditionsTile from './ConditionsTile';
 import FatigueTile from './FatigueTile';
+import BalanceTile from './BalanceTile';
 
 class NpcCard extends React.Component {
     constructor() {
@@ -57,6 +58,9 @@ class NpcCard extends React.Component {
                 <FatigueTile 
                     curr_fatigue={this.state.test_npc.curr_fatigue}
                     max_fatigue={this.state.test_npc.max_fatigue}
+                />
+                <BalanceTile 
+                    balance={this.state.test_npc.balance}
                 />
             </div>
         );
