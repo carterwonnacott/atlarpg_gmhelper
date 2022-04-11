@@ -44,14 +44,30 @@ class NpcView extends React.Component {
             balance: balance,
             notes: null
         };
-        this.state = {...this.state, test_npc};
+        this.state = {
+            ...this.state, 
+            test_npc,
+            divstyle: {
+                marginLeft: 10
+            }
+        };
     }
 
     render() {
         return (
-            <div>
-                <p> NPC { this.state.test_npc.tier } </p>
-                <h2> { this.state.test_npc.name } </h2>
+            <div
+            style={this.state.divstyle}
+            >
+                <p
+                style={{
+                    marginBottom: 0
+                }}
+                > NPC { this.state.test_npc.tier } </p>
+                <h2
+                style={{
+                    marginTop: 5
+                }}
+                > { this.state.test_npc.name } </h2>
                 <ConditionsTile
                     conditions={this.state.test_npc.conditions} 
                 />
