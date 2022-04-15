@@ -64,16 +64,28 @@ class BalanceTile extends React.Component {
     render() {
         return (
             <div>
-                <h3>Balance</h3>
-                <button
-                onClick={() => this._shiftBalanceDown()}
-                >-</button>
-                <div>
-                <code style={{whiteSpace: 'pre-wrap'}}>{this.state.balanceString}</code>
-                </div>                
-                <button
-                onClick={() => this._shiftBalanceUp()}
-                >+</button>
+                <h3
+                style={{marginBottom: 8}}
+                >Balance</h3>
+                <div
+                style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                }}
+                >
+                    <button
+                    onClick={() => this._shiftBalanceDown()}
+                    style={{ marginRight: 5}}
+                    >-</button>
+                    <div>
+                    <code style={{whiteSpace: 'pre-wrap'}}>{this.state.balanceString}</code>
+                    </div>                
+                    <button
+                    onClick={() => this._shiftBalanceUp()}
+                    style={{ marginLeft: 5 }}
+                    >+</button>
+                </div>
             </div>
         );
     }

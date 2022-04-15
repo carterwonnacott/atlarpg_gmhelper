@@ -32,14 +32,22 @@ class FatigueTile extends React.Component {
     render() {
         return (
             <div>
-                <div>
-                    <h3>Fatigue</h3>
+                <div
+                style={{
+                    marginBottom: 7
+                }}
+                >
+                    <h3
+                    style={{ marginBottom: 10 }}
+                    >Fatigue</h3>
                     <button
                         onClick={() => this._decrementFatigue()}
+                        style={{ marginRight: 3 }}
                     >-</button>
                     {this.state.curr_fatigue} / {this.state.max_fatigue}
                     <button
                         onClick={() => this._incrementFatigue()}
+                        style={{ marginLeft: 3 }}
                     >+</button>
                 </div>
                 <button

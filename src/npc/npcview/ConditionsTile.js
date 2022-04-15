@@ -32,8 +32,16 @@ class ConditionsTile extends React.Component {
     render() {
         return (
             <div>
-                <h3>Conditions</h3>
-                <div>
+                <h3
+                style={{
+                    marginBottom: 8
+                }}
+                >Conditions</h3>
+                <div
+                style={{
+                    marginBottom: 5
+                }}
+                >
                     { this.state.conditions.map((condition) => (
                         <label>
                             <input 
